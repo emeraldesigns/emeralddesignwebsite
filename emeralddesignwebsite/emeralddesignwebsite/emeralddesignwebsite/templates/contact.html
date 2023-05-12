@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<head>
+    <title>Contact Us</title>
+    <style>
+      .jumbotron {
+      text-align: center;
+      width: 800px;
+      margin-left: 150px;
+      margin-right: 150px;
+
+    }
+
+    body {
+
+    }
+    </style>
+</head>
+
+<body>
+
+<div class="jumbotron">
+    <header class="bg-dark text-light py-2">
+        <h1 class="display-4">Contact Us</h1>
+      </header>
+      <br>
+  <form method="post">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit">Send</button>
+  </form>
+</div>
+
+{% endblock %}
